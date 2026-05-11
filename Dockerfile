@@ -1,12 +1,7 @@
-# Use an official Node.js runtime as the base image
-FROM node:22
-#mewo
+FROM node:20-alpine
 
-# Set the working directory inside the container
 WORKDIR /app
+COPY realtime.js .
 
-# Copy all files from the root directory into the container
-COPY . .
-
-# Run the JavaScript program
+EXPOSE 8080
 CMD ["node", "realtime.js"]
