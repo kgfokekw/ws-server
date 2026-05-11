@@ -4,9 +4,6 @@
   WORKDIR /app
   ENV NODE_ENV=production
 
-  COPY package.json ./
-  RUN npm install --omit=dev
-
   COPY realtime.js ./realtime.js
 
   EXPOSE 8080
