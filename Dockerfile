@@ -1,10 +1,11 @@
- FROM node:22-alpine
+
+  FROM node:22-alpine
 
   WORKDIR /app
   ENV NODE_ENV=production
 
-  COPY package*.json ./
-  RUN npm ci --omit=dev
+  COPY package.json ./
+  RUN npm install --omit=dev
 
   COPY realtime.js ./realtime.js
 
